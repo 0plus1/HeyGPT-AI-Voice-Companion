@@ -3,6 +3,8 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 const LOCALE = 'it-IT';
+const STORAGE_FOLDER = './storage';
+export const TEMP_FOLDER = `${STORAGE_FOLDER}/temp`;
 // OPEN AI
 export const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
 export const OPEN_AI_MODEL = 'gpt-3.5-turbo';
