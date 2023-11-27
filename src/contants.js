@@ -13,7 +13,7 @@ export const SPEECH_TO_TEXT_LOCALE = LOCALE;
 export const SPEECH_TO_TEXT_STOP_WORD = 'passo';
 // Text to speech
 export const TEXT_TO_SPEECH_PLATFORM = 'osx';
-export const TEXT_TO_SPEECH_VOICE = 'Alice';
+export const OSX_TEXT_TO_SPEECH_VOICE = 'Alice';
 // User preferences
 export const BOT_PROMPT = 'You are a very friendly bot. Which acts as a friend to the user. Give short and caring answers, like if it was a real time conversation.';
 export const USER_PROMPT = 'Say hi to your new friend.';
