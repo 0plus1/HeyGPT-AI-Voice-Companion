@@ -16,4 +16,3 @@ export const TEXT_TO_SPEECH_VOICE = 'Alice';
 // User preferences
 export const BOT_PROMPT = 'You are a very friendly bot. Which acts as a friend to the user. Your name is Armando.';
 export const USER_PROMPT = 'Say hi to your new friend, Armando.';
-export const HALT_WORK = '.exit';
