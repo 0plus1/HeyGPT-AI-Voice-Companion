@@ -3,9 +3,11 @@ import { USER_PROMPT } from './src/contants.js';
 import { textToSpeech } from './src/text-to-speech/index.js';
 import { speechToText } from "./src/speech-to-text/index.js";
 
-// Initialise variables
 const NEWLINE = "\n\n";
+// Initialise variables
 let loop = true;
+// We need to lock the microphone until the speech has ended
+let lock = false;
 // Initialise OpenAI
 initOpenAI();
 
@@ -16,8 +18,8 @@ async function hear() {
   return userInput;
 }
 async function say(gptOutput) {
-  await textToSpeech(gptOutput);
   console.log(gptOutput);
+  await textToSpeech(gptOutput);
   return gptOutput;
 }
 
@@ -31,7 +33,12 @@ process.on('SIGINT', () => {
 // Main loop i/o
 console.log(USER_PROMPT + NEWLINE);
 while (loop === true) {
-  const userInput = await hear();
+  let userInput;
+  if (lock === false) {
+    userInput = await hear();
+    lock = true;
+  }
   const content = await dispatch(userInput);
   await say(content);
+  lock = false;
 }
