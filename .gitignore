@@ -2,3 +2,5 @@ node_modules
 .env
 storage/temp/*
 !storage/temp/.gitkeep
+storage/profiles/*
+!storage/profiles/default.json

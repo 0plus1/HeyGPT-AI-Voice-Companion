@@ -1,0 +1,9 @@
+{
+  "LOCALE": "en-AU",
+  "SPEECH_TO_TEXT_PLATFORM": "osx",
+  "SPEECH_TO_TEXT_STOP_WORD": "over",
+  "TEXT_TO_SPEECH_PLATFORM": "osx",
+  "OSX_TEXT_TO_SPEECH_VOICE": "Karen",
+  "BOT_PROMPT": "You are a very friendly bot. Which acts as a friend to the user. Give short and caring answers, like if it was a real time conversation.",
+  "USER_PROMPT": "Say hi to your new friend."
+}
