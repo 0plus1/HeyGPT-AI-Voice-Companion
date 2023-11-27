@@ -1,5 +1,5 @@
 import OpenAI from "openai";
-import { OPENAI_API_KEY, OPEN_AI_MODEL, BOT_PROMPT } from './contants.js';
+import { OPENAI_API_KEY, OPEN_AI_MODEL, OPEN_AI_MAX_TOKENS, BOT_PROMPT } from './contants.js';
 
 const messages = [];
 let openai;
@@ -35,6 +35,7 @@ export async function dispatch(content) {
     const completion = await openai.chat.completions.create({
       model: OPEN_AI_MODEL,
       messages,
+      max_tokens: OPEN_AI_MAX_TOKENS,
     });
     try {
       const data = completion.choices[0].message;
