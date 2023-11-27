@@ -6,15 +6,13 @@ The project, built in node, aims to be a platform agnostic application to intera
 
 The end goal is to provide an easy to install solution for a RaspberryPI based assistant.
 
+This package aims to minimize its reliance on external packages as much as possible.
+
 ### Install
 At this stage this project can only run on MacOS, more adapters will come soon.
 The project requires node 18+
 
-Create a `.env` file on the root of the project with the following contents:
-
-```
-OPENAI_API_KEY=your-key
-```
+Create a `.env` file on the root of the project with the contents in .env.example
 
 Then run `yarn install` and `yarn start` to launch.
 
@@ -29,6 +27,9 @@ The functionality requires the following packages to be installed:
 
 ### text-to-speech engines
 The text-to-speech supports the following engines:
+
+#### Elevenlabs (paid, free account available)
+Requires an API key and a voice ID set in the .env file.
 
 #### OSX (free)
 Text-to-speech uses the native [say cli interface](https://maithegeek.medium.com/having-fun-in-macos-with-say-command-d4a0d3319668)
