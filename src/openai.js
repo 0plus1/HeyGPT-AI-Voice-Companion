@@ -1,5 +1,5 @@
 import OpenAI from "openai";
-import { OPENAI_API_KEY, OPEN_AI_MODEL, OPEN_AI_MAX_TOKENS, BOT_PROMPT } from './contants.js';
+import { OPENAI_API_KEY, OPEN_AI_MODEL, OPEN_AI_MAX_TOKENS, BOT_PROMPT } from '#root/src/contants.js';
 
 const messages = [];
 let openai;

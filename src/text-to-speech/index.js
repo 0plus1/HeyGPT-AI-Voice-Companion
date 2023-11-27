@@ -1,6 +1,9 @@
-import { TEXT_TO_SPEECH_PLATFORM, OSX_TEXT_TO_SPEECH_VOICE } from '../contants.js';
-import { speak as osx } from './osx.js';
-import { speak as elevenlabs } from './elevenlabs.js';
+import { readProfileVariable } from '#root/src/profiles.js';
+import { speak as osx } from '#root/src/text-to-speech/osx.js';
+import { speak as elevenlabs } from '#root/src/text-to-speech/elevenlabs.js';
+
+const TEXT_TO_SPEECH_PLATFORM = readProfileVariable('TEXT_TO_SPEECH_PLATFORM');
+const OSX_TEXT_TO_SPEECH_VOICE = readProfileVariable('OSX_TEXT_TO_SPEECH_VOICE');
 
 export function textToSpeech(textInput) {
   switch (TEXT_TO_SPEECH_PLATFORM) {

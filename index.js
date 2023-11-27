@@ -1,7 +1,8 @@
-import { dispatch, initOpenAI } from './src/openai.js';
-import { USER_PROMPT } from './src/contants.js';
-import { textToSpeech } from './src/text-to-speech/index.js';
-import { speechToText } from "./src/speech-to-text/index.js";
+import { dispatch, initOpenAI } from '#root/src/openai.js';
+import { textToSpeech } from '#root/src/text-to-speech/index.js';
+import { speechToText } from "#root/src/speech-to-text/index.js";
+import { readProfileVariable } from '#root/src/profiles.js';
+
 
 const NEWLINE = "\n\n";
 // Initialise variables
@@ -11,7 +12,7 @@ let lock = false;
 // Initialise OpenAI
 initOpenAI();
 
-// 
+// read cli argument
 async function hear() {
   const userInput = await speechToText();
   console.log(userInput);
@@ -31,7 +32,7 @@ process.on('SIGINT', () => {
 });
 
 // Main loop i/o
-console.log(USER_PROMPT + NEWLINE);
+console.log(readProfileVariable('USER_PROMPT') + NEWLINE);
 while (loop === true) {
   let userInput;
   if (lock === false) {

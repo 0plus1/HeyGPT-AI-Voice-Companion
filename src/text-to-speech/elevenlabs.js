@@ -1,7 +1,7 @@
-import { TEMP_FOLDER, ELEVEN_LABS_API_KEY, ELEVEN_LABS_VOICE_ID } from '../contants.js';
+import { TEMP_FOLDER, ELEVEN_LABS_API_KEY, ELEVEN_LABS_VOICE_ID } from '#root/src/contants.js';
 import fetch from 'node-fetch';
 import fs from 'fs';
-import { playAudio } from './simpleAudioEngine.js';
+import { playAudio } from '#root/src/text-to-speech/simpleAudioEngine.js';
 
 const AUDIO_FILE = TEMP_FOLDER + '/audio.mp3';
 

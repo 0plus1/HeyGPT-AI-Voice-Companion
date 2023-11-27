@@ -1,5 +1,8 @@
 import { spawn } from 'child_process';
-import { SPEECH_TO_TEXT_LOCALE, SPEECH_TO_TEXT_STOP_WORD } from '../contants.js';
+import { readProfileVariable } from '#root/src/profiles.js';
+
+const SPEECH_TO_TEXT_LOCALE = readProfileVariable('LOCALE');
+const SPEECH_TO_TEXT_STOP_WORD = readProfileVariable('SPEECH_TO_TEXT_STOP_WORD');
 
 const DEBUG = false;
 
