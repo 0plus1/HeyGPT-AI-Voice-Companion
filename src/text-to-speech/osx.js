@@ -13,6 +13,5 @@ export function speak(text, voice) {
       console.error(`stderr: ${stderr}`);
       return;
     }
-    console.log(`stdout: ${stdout}`);
   });
 }
