@@ -10,7 +10,8 @@ export function textToSpeech(textInput) {
     case 'elevenlabs':
       return elevenlabs(textInput);
     case 'osx':
-      return osx(textInput, OSX_TEXT_TO_SPEECH_VOICE);
+      osx(textInput, TEXT_TO_SPEECH_VOICE);
+      break;
     default:
       throw new Error('No valid text to speech platform specified');
   }
