@@ -1,9 +1,8 @@
-import { readProfileVariable } from '#root/src/profiles.js';
+import { readProfileVariables } from '#root/src/profiles.js';
 import { speak as osx } from '#root/src/text-to-speech/osx.js';
 import { speak as elevenlabs } from '#root/src/text-to-speech/elevenlabs.js';
 
-const TEXT_TO_SPEECH_PLATFORM = readProfileVariable('TEXT_TO_SPEECH_PLATFORM');
-const OSX_TEXT_TO_SPEECH_VOICE = readProfileVariable('OSX_TEXT_TO_SPEECH_VOICE');
+const { TEXT_TO_SPEECH_PLATFORM, TEXT_TO_SPEECH_VOICE } = readProfileVariables('TEXT_TO_SPEECH_PLATFORM');
 
 export function textToSpeech(textInput) {
   switch (TEXT_TO_SPEECH_PLATFORM) {

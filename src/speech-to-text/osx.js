@@ -1,8 +1,7 @@
 import { spawn } from 'child_process';
-import { readProfileVariable } from '#root/src/profiles.js';
+import { readProfileVariables } from '#root/src/profiles.js';
 
-const SPEECH_TO_TEXT_LOCALE = readProfileVariable('LOCALE');
-const SPEECH_TO_TEXT_STOP_WORD = readProfileVariable('SPEECH_TO_TEXT_STOP_WORD');
+const { LOCALE: SPEECH_TO_TEXT_LOCALE, SPEECH_TO_TEXT_STOP_WORD } = readProfileVariables();
 
 const DEBUG = false;
 

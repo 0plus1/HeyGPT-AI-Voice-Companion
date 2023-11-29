@@ -1,8 +1,7 @@
-import { readProfileVariable } from '#root/src/profiles.js';
+import { readProfileVariables } from '#root/src/profiles.js';
 import { hear as osx } from '#root/src/speech-to-text/osx.js';
 
-const SPEECH_TO_TEXT_PLATFORM = readProfileVariable('SPEECH_TO_TEXT_PLATFORM');
-const SPEECH_TO_TEXT_LOCALE = readProfileVariable('LOCALE');
+const { SPEECH_TO_TEXT_PLATFORM, SPEECH_TO_TEXT_LOCALE } = readProfileVariables();
 
 export async function speechToText(textInput) {
   switch (SPEECH_TO_TEXT_PLATFORM) {

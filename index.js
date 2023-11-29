@@ -1,9 +1,9 @@
 import { dispatch, initOpenAI } from '#root/src/openai.js';
 import { textToSpeech } from '#root/src/text-to-speech/index.js';
 import { speechToText } from "#root/src/speech-to-text/index.js";
-import { readProfileVariable } from '#root/src/profiles.js';
+import { readProfileVariables } from '#root/src/profiles.js';
 
-
+const { USER_PROMPT } = readProfileVariables();
 const NEWLINE = "\n\n";
 // Initialise variables
 let loop = true;
@@ -32,7 +32,7 @@ process.on('SIGINT', () => {
 });
 
 // Main loop i/o
-console.log(readProfileVariable('USER_PROMPT') + NEWLINE);
+console.log(USER_PROMPT + NEWLINE);
 while (loop === true) {
   let userInput;
   if (lock === false) {
