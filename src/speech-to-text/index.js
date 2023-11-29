@@ -1,5 +1,5 @@
 import { readProfileVariables } from '#root/src/profiles.js';
-import { hear as osx } from '#root/src/speech-to-text/osx.js';
+import { hear as osx } from '#root/src/speech-to-text/adapters/osx.js';
 
 const { SPEECH_TO_TEXT_PLATFORM, SPEECH_TO_TEXT_LOCALE } = readProfileVariables();
 
