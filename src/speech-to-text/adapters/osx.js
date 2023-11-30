@@ -1,7 +1,8 @@
 import { spawn } from 'child_process';
 import { readProfileVariables } from '#root/src/profiles.js';
+import { lookForStopWord } from '#root/src/speech-to-text/adapters/helpers.js';
 
-const { LOCALE: SPEECH_TO_TEXT_LOCALE, SPEECH_TO_TEXT_STOP_WORD } = readProfileVariables();
+const { LOCALE: SPEECH_TO_TEXT_LOCALE } = readProfileVariables();
 
 const DEBUG = false;
 
@@ -17,9 +18,10 @@ export async function hear() {
 
     child.stdout.on('data', function (data) {
       debugLine('stdout: ' + data);
-      if (data.toString().includes(SPEECH_TO_TEXT_STOP_WORD)) {
+      const { text, stopWordFound } = lookForStopWord(data.toString());
+      if (stopWordFound) {
         child.kill();
-        resolve(data.toString().replace(new RegExp(SPEECH_TO_TEXT_STOP_WORD + '$'), ''));
+        resolve(text);
       }
     });
 
